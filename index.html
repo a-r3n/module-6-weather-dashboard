@@ -2,39 +2,41 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/style.css">
     <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-6">
-                <h2>Weather Dashboard</h2>
-                <form id="search-form">
-                    <div class="form-group">
-                        <label for="cityInput">Enter City:</label>
-                        <input type="text" class="form-control" id="cityInput" placeholder="Enter city name">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Search</button>
-                </form>
-                <div id="search-history" class="mt-3">
-                    <h4>Search History</h4>
-                    <ul class="list-group" id="history-list"></ul>
+    <div class="container">
+        <h1 class="text-center my-4">Weather Dashboard</h1>
+        <div class="row mb-3">
+            <div class="col-12 col-md-4 mb-3">
+                <div class="search-area">
+                    <input type="text" id="city-input" class="form-control" placeholder="Search for a City:">
+                    <button id="search-button" class="btn btn-primary btn-block mt-2">Search</button>
+                    <ul id="search-history" class="list-group mt-3">
+                        <!-- Search history will be populated here -->
+                    </ul>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div id="current-weather" class="mt-3"></div>
-                <div id="forecast" class="mt-3"></div>
+            <div class="col-12 col-md-8">
+                <div id="current-weather" class="card mb-3">
+                    <!-- Current weather will be populated here -->
+                </div>
+                <div id="forecast" class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">5-Day Forecast:</h5>
+                        <div class="d-flex flex-row justify-content-between">
+                            <!-- 5-day forecast will be populated here -->
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
     <script src="assets/script.js"></script>
 </body>
 </html>

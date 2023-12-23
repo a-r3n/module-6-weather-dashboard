@@ -1,0 +1,34 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    padding-top: 20px;
+}
+
+#search-history li {
+    cursor: pointer;
+}
+
+#search-history li:hover {
+    background-color: #f8f9fa;
+}
+
+#current-weather, #forecast {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+}
+
+.forecast-day {
+    flex: 1;
+    text-align: center;
+}
+
+.forecast-icon {
+    width: 50px;
+    height: 50px;
+}
+
+/* Add your custom styles here */
