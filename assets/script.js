@@ -71,9 +71,12 @@ function getForecast(city) {
 
 function displayWeather(data) {
     var currentWeatherDiv = document.getElementById('current-weather');
+    var weatherIcon = `http://openweathermap.org/img/wn/${data.weather[0].icon}.png`;
+
     currentWeatherDiv.innerHTML = `
         <div class="card-body">
             <h4 class="card-title">${data.name} Current Weather</h4>
+            <img src="${weatherIcon}" alt="Weather Icon">
             <p>Temperature: ${data.main.temp} °C</p>
             <p>Humidity: ${data.main.humidity}%</p>
             <p>Wind Speed: ${data.wind.speed} m/s</p>
@@ -90,11 +93,15 @@ function displayForecast(data) {
 
     for (let i = 0; i < data.list.length; i += 8) { // Loop through the forecast at 8 intervals (every 24 hours)
         var dayData = data.list[i];
+        var weatherIcon = `http://openweathermap.org/img/wn/${dayData.weather[0].icon}.png`;
+
         forecastHTML += `
             <div class="forecast-card">
                 <h6>${new Date(dayData.dt_txt).toLocaleDateString()}</h6>
+                <img src="${weatherIcon}" alt="Weather Icon" style="width:50px; height:50px;">
                 <p>Temp: ${dayData.main.temp} °C</p>
                 <p>Humidity: ${dayData.main.humidity}%</p>
+                <p>Wind Speed: ${dayData.wind.speed} m/s</p>
                 <p>${dayData.weather[0].main} (${dayData.weather[0].description})</p>
             </div>`;
     }
